@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ book.name }}</title>
+</head>
+<body>
+        <form class="form_div" method="POST" action="{{ url_for('edit', book_id=book.id) }}">
+            <h1>Назва книги:</h1>
+            <input type="text" name="name" value="{{ book.name }}" required>
+        
+            <h1>Автор:</h1>
+            <input type="text" name="author" value="{{ book.author }}" required>
+        
+            <h1>Кількість сторінок:</h1>
+            <input type="number" name="count_page" value="{{ book.count_page }}" required>
+        
+            <a href="{{ url_for('get_books') }}" class="back_btn">До усіх книг</a>
+            <button type="submit" class="save_btn">Зберегти</button>
+        </form>
+        
+        
+</body>
+</html>
+
+<style>
+    body{
+        color: rgb(255, 254, 254);
+        background-color: rgb(72, 67, 102);
+    }
+    .form_div{
+        padding: 3%;
+    }
+    .book-name, .author, .page-count {
+        margin: 10px 0; 
+        font-size: 18px; 
+        color: #333; 
+    }
+
+    input {
+        width: calc(100% - 20px); 
+        padding: 10px;
+        border: 1px solid #83bdff; 
+        border-radius: 5px; 
+        margin-bottom: 15px; 
+        font-size: 20px;
+    }
+    
+    .back_btn{
+        border: solid;
+        margin-top: 100px;
+        border-width: 5px;
+        background-color: transparent;
+        padding: 10px 10px 10px 10px;
+        border-color: #005bb5;
+        border-radius: 10%;
+        font-size: 25px;
+        text-decoration: none;
+        color: rgb(246, 246, 246);
+    }
+    .save_btn{
+        margin-left:1% ;
+        border: solid;
+        border-color: #408b60;
+        margin-top: 100px;
+        border-width: 5px;
+        background-color: transparent;
+        padding: 10px 10px 10px 10px;
+        border-radius: 10%;
+        font-size: 25px;
+        text-decoration: none;
+        color: rgb(246, 246, 246);
+    }
+    .save_btn:hover {
+    background-color: #408b60;
+    transition: 0.5s;  
+
+}
+
+    .back_btn:hover{
+        background-color: #005bb5;
+        transition: 0.5s;  
+    }
+
+</style>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список книг</title>
+</head>
+<body>
+    <h2 class="center">Список книг</h2>
+    <ul class="list_books">
+    {% for book in books %}
+        <li>
+            <form class="form_div"  action="/books/{{ book.id }}" method="post" >
+                <a  href="/books/{{ book.id }}">{{ book.name }}, {{ book.author }}</a>
+                <input type="hidden" name="_method" value="delete">
+                <button class="delete_btn" type="submit">Видалити</button>
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+    <br>
+    <a href="/books/addNew" class="create_btn">Створити книгу</a>
+    
+</body>
+</html>
+
+<style>
+    body{
+        color: rgb(255, 254, 254);
+        background-color: rgb(72, 67, 102);
+        text-align: center;
+    }
+    h2{
+        font-size: 35px;
+    }
+    .center{
+        text-align: center
+    }
+    .form_div{
+        margin-bottom: 10px;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+    .form_div:hover a{
+        font-size: 30px;
+        border-left: solid;
+    }
+    
+    ul{
+        list-style-type: none;
+    }
+    
+    .create_btn{
+        border: solid;
+        border-width: 5px;
+        background-color: transparent;
+        padding: 10px 10px 10px 10px;
+        border-color: #005bb5;
+        border-radius: 10%;
+        font-size: 25px;
+        text-decoration: none;
+        color: rgb(246, 246, 246);
+        
+    }
+    .create_btn:hover{
+        background-color: #005bb5;
+        transition: 0.5s; 
+    }
+    a{
+        padding-left: 5px;
+        text-decoration: none;
+        font-size: 25px;
+        margin:10px;
+        color: rgb(152, 136, 255);
+    }
+    .delete_btn{
+        border: solid;
+        color: rgb(255, 254, 254);
+        border: solid;
+        border-width: 5px;
+        background-color: transparent;
+        padding: 10px 10px 10px 10px;
+        border-color: rgb(191, 44, 44);
+        border-radius: 10%;
+        font-size: 30px;
+    }
+    .delete_btn:hover{
+        background-color: rgb(191, 44, 44);
+        transition: 0.5s; 
+    }
+</style>

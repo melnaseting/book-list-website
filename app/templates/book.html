@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ book.name }} by {{ book.author }}</title>
+</head>
+<body>
+    <h1>Книгa "{{ book.name }}", яку написав {{ book.author }} має {{ book.count_page }} сторінок</h1>
+    <br><br><br>
+    <button><a href="{{ url_for('edit_book', book_id=book.id) }}">Редагувати</a></button>
+</body>
+</html>
+
+<style>
+    body{
+        padding: 5%;
+        text-align: center;
+        background-color: rgb(72, 67, 102);
+        color: white;
+    }
+    button{
+        border: solid;
+        border-width: 5px;
+        background-color: transparent;
+        padding: 15px 15px 15px 15px;
+        border-color: #005bb5;
+        border-radius: 10%;
+        font-size: 40px;
+    }
+    button:hover{
+        background-color: #005bb5;
+        transition: 0.5s; 
+    }
+    a{
+        text-decoration: none;
+        color: rgb(246, 246, 246);
+    }
+</style>

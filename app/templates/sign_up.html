@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Додати книгу</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="center">Додати нову книгу</h1>
+    <br><br><br>
+    <form class="form_1" action="/sign-up-user" method="post">
+        <div class="row_div">
+            <label for="name">Ім'я:</label>
+            <input type="text" id="username" name="username" required><br><br>
+        </div>
+         <div class="row_div">   
+            <label for="password">Пароль:</label>
+            <input type="text" id="password" name="password" required><br><br>
+        </div>
+        <br><br>
+        <button class="sign_up" type="submit">Зареєструватися</button>
+    </form>
+</div>
+</body>
+</html>
+<style>
+    body{
+        color: rgb(255, 254, 254);
+        background-color: rgb(72, 67, 102);
+    }
+    h1{
+        font-size: 50px;
+    }
+    label{
+        font-size: 25px;
+    }
+    input{
+        height: 30px;
+        font-size: 25px;
+    }
+    .container{
+    padding-top: 5%;
+    }
+    .center{
+        text-align: center
+    }
+    .form_1{
+        padding-left: 30%;
+    }
+    .row_div{
+        width: 90%;
+        margin-left: -5%;
+        display: flex;
+        align-content: space-between;
+        justify-content:  space-around;
+        align-items: center;
+    }
+    .input_cp{
+        margin-left: -11%;
+    }
+    .sign_up{
+        color: rgb(255, 254, 254);
+        border: solid;
+        border-width: 5px;
+        background-color: transparent;
+        padding: 10px 10px 10px 10px;
+        border-color: #408b60;
+        border-radius: 10%;
+        font-size: 25px;
+    }
+    .sign_up:hover{
+        background-color: #408b60;
+        transition: 0.5s; 
+    }
+    
+    
+
+</style>
